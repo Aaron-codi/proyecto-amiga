@@ -145,3 +145,55 @@ function activarPulsoNeonEnTiempoReal(audio){
     audio.addEventListener('play', iniciarAnalisis);
 
 }
+const botonCartas = document.getElementById("abrirCartas");
+const visorCartas = document.getElementById("visorCartas");
+
+
+if(botonCartas){
+
+    botonCartas.addEventListener("click",()=>{
+
+        visorCartas.classList.toggle("oculto");
+
+    });
+
+}
+const botonFinal = document.getElementById("abrirFinal");
+const cartaFinal = document.getElementById("cartaFinal");
+const audioFinal = document.getElementById("audioFinal");
+
+
+if(botonFinal){
+
+    botonFinal.addEventListener("click",()=>{
+
+
+        // Detener música del perrito bailando
+        if(audio){
+
+            audio.pause();
+            audio.currentTime = 0;
+
+        }
+
+
+        // Mostrar carta final
+        cartaFinal.classList.remove("oculto");
+
+
+        // Reproducir audio de la carta final
+        if(audioFinal){
+
+            audioFinal.currentTime = 0;
+            audioFinal.play();
+
+        }
+
+
+        // Ocultar botón después de usarlo
+        botonFinal.style.display="none";
+
+
+    });
+
+}
