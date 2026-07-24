@@ -1,0 +1,53 @@
+/*==========================================
+GALERÍA
+==========================================*/
+
+#galeria{
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+    align-items:flex-start;
+
+}
+/*==========================================
+CARTAS
+==========================================*/
+
+.carta{
+
+    width:340px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:rgba(20,25,40,.8);
+
+    border:1px solid #5d4bff;
+
+}
+/*==========================================
+CARTA PLURAL
+==========================================*/
+
+#cartaPLURAL{
+
+    width:700px;
+
+}
+#cartaPLURAL .imagenes{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:12px;
+
+}
+#galeria.activa{
+
+    display:flex;
+
+}

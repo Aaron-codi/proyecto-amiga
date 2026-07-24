@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;600&display=swap');
+
+:root{
+
+    --bg:#050713;
+    --bg2:#090B16;
+
+    --panel:#111528;
+    --panel2:#1A1F38;
+
+    --violet:#A855F7;
+    --violet-soft:#C084FC;
+
+    --green:#39FF88;
+    --green-soft:#7CFFB3;
+
+    --blue:#7AD7FF;
+    --blue-soft:#B9ECFF;
+
+    --text:#F4F7FF;
+    --muted:#B7C0E0;
+
+    --line:rgba(168,85,247,.35);
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+
+    background:
+        radial-gradient(circle at top left,
+            rgba(168,85,247,.20),
+            transparent 30%),
+
+        radial-gradient(circle at bottom right,
+            rgba(57,255,136,.10),
+            transparent 35%),
+
+        linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
+
+    color:var(--text);
+
+    font-family:'Inter',sans-serif;
+
+}
+
+/* ======================================================
+   LAYOUT PRINCIPAL
+   ====================================================== */
+
+.app{
+    display:flex;
+    width:100%;
+    height:100vh;
+    transition:
+        transform 0.08s linear,
+        filter 0.08s linear;
+}
+
+/* ======================================================
+   SIDEBAR
+   ====================================================== */
+
+.sidebar{
+
+    width:270px;
+
+    padding:24px 18px;
+
+    background:rgba(17,21,40,.95);
+
+    border-right:1px solid var(--line);
+
+    display:flex;
+    flex-direction:column;
+
+    gap:22px;
+
+    position:relative;
+
+    box-shadow:
+        0 0 30px rgba(168,85,247,.12),
+        inset -1px 0 0 rgba(122,215,255,.08);
+
+}
+
+/* Logo */
+
+.logo h1{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:2rem;
+
+    color:var(--violet-soft);
+
+    letter-spacing:3px;
+
+    text-shadow:0 0 18px rgba(168,85,247,.45);
+
+}
+
+.logo span{
+
+    color:var(--blue-soft);
+
+    font-size:.9rem;
+
+    letter-spacing:2px;
+
+}
+
+/* Estado */
+
+.estado{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:10px 14px;
+
+    border:1px solid rgba(57,255,136,.45);
+
+    border-radius:12px;
+
+    background:rgba(57,255,136,.06);
+
+    color:var(--green-soft);
+
+}
+
+.dot{
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:0 0 10px var(--green);
+
+}
+
+/* Menú */
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.nav-btn{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border-radius:14px;
+
+    border:1px solid rgba(168,85,247,.28);
+
+    background:rgba(26,31,56,.88);
+
+    color:var(--text);
+
+    font-family:'Orbitron',sans-serif;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    transition:
+        transform .18s ease,
+        border-color .18s ease,
+        box-shadow .18s ease,
+        background .18s ease;
+
+}
+
+.nav-btn:hover{
+
+    transform:translateX(4px);
+
+    border-color:var(--green);
+
+    box-shadow:0 0 18px rgba(57,255,136,.22);
+
+}
+
+.nav-btn.activo{
+
+    border-color:var(--green);
+
+    background:rgba(57,255,136,.08);
+
+    box-shadow:
+        0 0 18px rgba(57,255,136,.28),
+        inset 0 0 14px rgba(57,255,136,.10);
+
+}
+
+/* Footer sidebar */
+
+.sidebar-footer{
+
+    margin-top:auto;
+
+    padding-top:16px;
+
+    border-top:1px solid var(--line);
+
+    color:var(--muted);
+
+}
+
+.sidebar-footer small{
+    color:var(--blue-soft);
+}
+
+/* ======================================================
+   CONTENIDO
+   ====================================================== */
+
+.contenido{
+
+    flex:1;
+
+    padding:36px;
+
+    overflow:auto;
+
+    position:relative;
+
+}
+
+/* Grid holográfico de fondo */
+
+.contenido::before{
+
+    content:'';
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(rgba(168,85,247,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(122,215,255,.06) 1px, transparent 1px);
+
+    background-size:64px 64px;
+
+    pointer-events:none;
+
+    opacity:.25;
+
+}
+
+/* Secciones */
+
+.seccion{
+
+    display:none;
+
+    position:relative;
+
+    z-index:1;
+
+    max-width:1100px;
+
+    animation:fade .25s ease;
+
+}
+
+.seccion.activa{
+    display:block;
+}
+
+.seccion h2{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:2.2rem;
+
+    margin-bottom:14px;
+
+    color:var(--blue-soft);
+
+    text-shadow:0 0 16px rgba(122,215,255,.28);
+
+}
+
+.seccion p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:1.05rem;
+
+}
+
+/* Panel de contenido */
+
+.seccion{
+
+    padding:28px;
+
+    border-radius:22px;
+
+    background:rgba(13,22,40,.78);
+
+    border:1px solid rgba(168,85,247,.28);
+
+    box-shadow:
+        0 0 26px rgba(168,85,247,.10),
+        inset 0 0 18px rgba(122,215,255,.05);
+
+}
+
+/* Animación */
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width:900px){
+
+    .app{
+        flex-direction:column;
+    }
+
+    .sidebar{
+
+        width:100%;
+        height:auto;
+
+        border-right:none;
+        border-bottom:1px solid var(--line);
+
+    }
+
+    .menu{
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+
+    .nav-btn{
+        flex:1 1 220px;
+    }
+
+    .contenido{
+        padding:20px;
+    }
+
+}
+.poster-cumple{
+    cursor:pointer;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        filter .2s ease;
+}
+
+.poster-cumple:hover{
+    transform:scale(1.01);
+    box-shadow:
+        0 0 24px rgba(57,255,136,.28),
+        0 0 42px rgba(168,85,247,.18);
+    filter:brightness(1.04);
+}
+.texto-inicio{
+    margin: 18px 0 22px;
+    line-height: 1.8;
+    font-size: 1.08rem;
+    color: var(--muted);
+}
+/* ======================================================
+   NIVEL DE NEÓN EN TIEMPO REAL
+   ====================================================== */
+
+:root{
+    --nivel-neon: 0; /* 0 a 1 */
+}
+
+/* Sidebar */
+
+.sidebar{
+    box-shadow:
+        0 0 calc(18px + var(--nivel-neon) * 32px)
+        rgba(168,85,247, calc(.18 + var(--nivel-neon) * .45));
+}
+
+/* Panel principal */
+
+.seccion{
+    box-shadow:
+        0 0 calc(18px + var(--nivel-neon) * 40px)
+        rgba(168,85,247, calc(.14 + var(--nivel-neon) * .40)),
+        0 0 calc(var(--nivel-neon) * 24px)
+        rgba(57,255,136, calc(var(--nivel-neon) * .28));
+}
+
+/* Botón activo */
+
+.nav-btn.activo{
+    box-shadow:
+        0 0 calc(14px + var(--nivel-neon) * 26px)
+        rgba(57,255,136, calc(.24 + var(--nivel-neon) * .55)),
+        0 0 calc(var(--nivel-neon) * 46px)
+        rgba(168,85,247, calc(var(--nivel-neon) * .22));
+}
+
+/* Título del panel */
+
+.seccion h2{
+    text-shadow:
+        0 0 calc(10px + var(--nivel-neon) * 22px)
+        rgba(122,215,255, calc(.28 + var(--nivel-neon) * .55));
+}
+
+/* CARTAS DE LA GALERIA */
+
+.cartas{
+
+    width:320px;
+    margin:20px;
+    border-radius:22px;
+
+    overflow:hidden;
+    
+    
+    background:rgba(17,21,40,.88);
+
+    border:1px solid rgba(168,85,247,.35);
+
+    box-shadow:
+        0 0 24px rgba(168,85,247,.16),
+        0 0 10px rgba(57,255,136,.08);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+
+}
+
+
+.cartas:hover{
+
+    transform:translateY(-6px);
+     
+    border-color:rgba(57,255,136,.65);
+
+    box-shadow:
+        0 0 34px rgba(57,255,136,.18),
+        0 0 48px rgba(168,85,247,.18);
+
+}
+
+.cartas img{
+
+    width:100%;
+    height:200px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+.info{
+
+    padding:18px;
+
+}
+
+.info h3{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:#B9ECFF;
+
+    margin-bottom:10px;
+
+}
+
+.info p{
+
+    color:#B7C0E0;
+
+    line-height:1.6;
+
+}
+/* FIN CARTAS DE LA GALERIA */

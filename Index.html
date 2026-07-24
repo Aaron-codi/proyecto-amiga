@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Museo de Nuestra Historia</title>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/seccion-galeria.css/GALERIA.css">
+    <link rel="stylesheet" href="CSS/seccion-timeline/timeline.css">
+</head>
+<body>
+
+    <div class="app" id="app">
+
+        <!-- ===================================== -->
+        <!-- BARRA LATERAL -->
+        <!-- ===================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h1>MUSEO</h1>
+                <span>ARCHIVO 2026</span>
+            </div>
+
+            <div class="estado">
+                <span class="dot"></span>
+                Acceso autorizado
+            </div>
+
+            <nav class="menu">
+                <button class="nav-btn activo" data-target="inicio"> 🤓Inicio</button>
+                <button class="nav-btn" data-target="galeria">
+                    📷 Galería
+                </button>
+
+                <button class="nav-btn" data-target="timeline">
+                    🕒 Línea temporal
+                </button>
+
+                <button class="nav-btn" data-target="carta">
+                    ✉ Carta de cumpleaños
+                </button>
+
+                <button class="nav-btn" data-target="extras">
+                    🎵 Extras
+                </button>
+
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Museo holográfico</p>
+                <small id="hora">00:00:00</small>
+            </div>
+
+        </aside>
+
+        <!-- ===================================== -->
+        <!-- CONTENIDO PRINCIPAL -->
+        <!-- ===================================== -->
+
+        <main class="contenido">
+
+            <section id="inicio" class="seccion activa">
+                <h2>Iniciando inicio</h2>
+                <p id="texto-inicio">MUY PERO MUY buenas tardes querida queridisima cumplañera :D</p>
+                <img id="imagenCumple" class="poster-cumple"   src="Imagenes/Feliz cumple.png" width="800" height="400">
+                <audio id="audioPerrito" src="Sonidos/Audio-perritoBailando.m4a" preload="auto"></audio>
+            </section>
+
+
+            <section id="galeria" class="seccion"> <!--GALERIAAA-->
+                <h2>Sala de recuerdos</h2>
+                    <p>Momentos jugando minecraft :V</p>
+                    <div class="cartas">
+                        <img src="Imagenes/foto1.png" alt="Recuerdo" width="400" height="112">
+                        <div class="info">
+
+                            <h3>Foto de cuando querias mejorar al cartografo</h3>
+
+                            <p>Creo que habiamos sacado como 10 stacks de hojas</p>
+
+                        </div>
+                    </div>
+                    <div class="cartas">
+                        <img src="Imagenes/foto2.png" alt="Recuerdo2" width="400" height="112">
+                        <div class="info">
+
+                            <h3>Foto de cuando me mandaste a minar :v</h3>
+
+                            <p>Ademas de ser como la tercera o cuarta vez que habiamos cambiado de mundo xd</p>
+
+                        </div>
+                    </div>
+                    <div class="cartas" id="cartaPLURAL">
+                        <img src="Imagenes/foto3.png" alt="Recuerdo3-b" width="400" height="112">
+                        <img src="Imagenes/foto5.png" alt="Recuerdo3-b" width="500" height="112">
+                        <img src="Imagenes/foto6.png" alt="Recuerdo" width="400" height="112">
+                        <div class="info">
+
+                            <h3>Ejemplos de casas que querias hacer en minecraft</h3>
+
+                            <p>No te decidias por cual hacer en el mundo jsjsj</p>
+
+                        </div>
+                        
+                    </div>
+                    <div class="cartas">
+                        <img src="Imagenes/foto4.png" alt="Recuerdo" width="400" height="112">
+                        <div class="info">
+
+                            <h3>La casa que hicimos 😮</h3>
+
+                            <p>Tuvimos que usar a nuestro amigo llamado "creativo" por tanto que nos papeaban en el end xdxdxd pero valio la pena al final jsjs</p>
+
+                        </div>
+                    </div>
+                   
+                    <div class="cartas">
+                        <img src="Imagenes/foto7.png" alt="Recuerdo" width="400" height="112">
+                        <div class="info">
+
+                            <h3>Una de las tantas veces que te quedaste dormida 😴</h3>
+
+                            <p>Un re sueño tenias porque hiciste muchas cosas pero aun asi habia ganas de jugar jsjs</p>
+
+                        </div>
+                    </div>
+
+
+
+            </section><!--FIN GALERIAAAAAA-->
+
+            <section id="timeline" class="seccion"> 
+
+                <h2>Línea temporal</h2>
+
+                <div class="timeline">
+
+                    <div class="evento">
+                        <h3>2021 - Conoceishon a amigeishon</h3>
+                        <p>
+                            Primera vez que nos conocimos :]
+                            Pus creo que ya te habia dicho que pensaba realmente cuando me hablaste por primera vez en ese grupo 🤨<br>
+                            NADA 🗣🗣
+                            ahr pero si, osea no pensaba nada xd, solo pensaba que " wow, alguien se preocupo de mi :O" y bueno, despues comenze a hablarte y nos hicimos amigos :D
+                        </p>
+                    </div>
+
+                    <div class="evento">
+                        <h3>2022 - Conociendo mejor a mi amigeishon</h3>
+                        <p>
+                            Aca no tengo muchos recuerdos que digamos, peroo creo que aca medio nos peleamos o tuvimos problemas, pero nada que el poder de la amistad no resolviera y el poder del perdon gracias a Dios :D
+                        </p>
+                    </div>
+                    <div class="evento">
+                        <h3>2023 - Distanciamiento de la amisteishon</h3>
+                        <p>
+                            Aca si me acuerdo mejor, fue cuando por culpa mia nos distanciamos porqueee...bueno ya sabes vos xd. Pero por si no te acordas, fue por mi relacion tons bno.
+                            Gracias a Dios que esta amistad se mantuvo viva❤. Por que luego pudimos hablar 
+                        </p>
+                    </div>
+                    <div class="evento">
+                        <h3>2024 -2025 </h3>
+                        <p>
+                            Aca fue donde nos volvimos mejores amigos, pido perdon porque no me acuerdo bien la fecha :V, pero la verdad no te voy a mentir, me sorprendio un poco que quisieras que fuera tu mejor amigo la verdad, pero hice bien en aceptar no? Porque no me puedo quejar de la gran amistad que me diste por años a pesar de las dificultades ❤❤
+                        </p>
+                    </div>
+                    <div class="evento">
+                        <h3>2026 - Actual</h3>
+                        <p>
+                            Construyendo tu pagina web de cumpleaños... y Dios sabra que mas le espera a muestra amistad 😇
+                        </p>
+                    </div>
+
+                </div>
+</section><!--FIN LINEA TEMPORAL-->
+
+            <section id="carta" class="seccion">
+                <h2>Carta de cumpleaños</h2>
+                <p>Esta sección ocupará todo el ancho disponible para que la carta pueda leerse cómoda, sin estar encerrada dentro de una tarjeta.</p>
+            </section>
+
+            <section id="extras" class="seccion">
+                <h2>Extras</h2>
+                <p>Memes, audios, stickers y cualquier sorpresa que quieras agregar después.</p>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="JS/Funciones.js"></script>
+</body>
+</html>

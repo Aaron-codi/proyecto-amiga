@@ -1,0 +1,70 @@
+/* ==========================
+   TIMELINE
+========================== */
+
+.timeline{
+
+    margin-top:40px;
+
+    border-left:4px solid var(--green);
+
+    padding-left:35px;
+
+}
+
+/* Evento */
+
+.evento{
+
+    position:relative;
+
+    margin-bottom:45px;
+
+}
+
+/* Punto */
+
+.evento::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--violet);
+
+    left:-46px;
+
+    top:6px;
+
+    box-shadow:
+        0 0 15px var(--violet),
+        0 0 30px var(--green);
+
+}
+
+/* Título */
+
+.evento h3{
+
+    font-family:'Orbitron',sans-serif;
+
+    color:var(--blue-soft);
+
+    margin-bottom:8px;
+
+}
+
+/* Texto */
+
+.evento p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
